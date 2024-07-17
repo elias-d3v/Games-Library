@@ -9,7 +9,7 @@ Cette application de bibliothèque de jeux, développée en PHP, permet aux util
 - Serveur web (Apache, Nginx, etc.)
 - Base de données MySQL
 ## Installation
-- Clonez le dépôt : git clone https://github.com/votreutilisateur/gamelibrary.git
+- Clonez le dépôt : git clone https://github.com/votreutilisateur/games-library.git
 - Configurez la base de données en utilisant le fichier config.php.
 - Lancez le serveur web et accédez à l'application via votre navigateur.
 ## Utilisation
