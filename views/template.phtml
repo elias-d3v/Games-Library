@@ -1,0 +1,28 @@
+<header>
+
+    <nav>
+
+        <picture>
+            <a href="index.php?route=home">
+                <img src="https://img.freepik.com/vecteurs-premium/creation-logo-jeu-ensemble-emblemes-jeu-video-logo-joueur-manette-jeu_564312-996.jpg" alt="logo jeu vidéo">
+            </a>
+        </picture>
+
+        <div>
+            <ul>
+                
+                <?php if(\Services\AuthService::getLogUser()->getRoleId() === 3) : ?> 
+                    <li><button type="button" class="btn btn-danger btn-lg"><a href="index.php?route=admin">Panel admin</a></button></li>
+                <?php endif; ?>
+
+                <li><button type="button" class="btn btn-secondary btn-lg"><a href="index.php?route=games">Jeux</a></button></li>
+
+                <li><button type="button" class="btn btn-secondary btn-lg"><a href="index.php?route=library">Ma librairie</a></button></li>
+
+                <li><button type="button" class="btn btn-primary btn-lg"><a href="index.php?route=logOut">Me déconnecter</a></button></li>
+            </ul>
+
+        </div>
+    </nav>
+
+</header>

@@ -1,0 +1,42 @@
+<main>
+
+    <section class="connexion-home">
+        <h1>Connexion</h1>
+        <hr>
+
+        <form action="index.php?route=checkLogin" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputUser1" class="form-label">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" name="username">
+                <div id="userHelp" class="form-text">Nous ne partagerons jamais votre e-mail avec qui que ce soit d'autre.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+            </div>
+
+            <?php if (isset($_SESSION['error'])) : ?>
+
+                    <p class="alert alert-danger">
+                    
+                        <?= $_SESSION['error'] ?>
+                    </p>
+
+                <?php unset($_SESSION['error']) ?>
+            <?php endif; ?>
+
+
+            
+
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+
+        <hr>
+
+            <p class="connexion-p">Je n'ai pas encore de compte. <a href="index.php?route=register">M'inscrire !</a></p>
+        </form>
+
+    </section>
+
+  
+
+</main>

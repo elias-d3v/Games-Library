@@ -1,0 +1,67 @@
+<main>
+
+    <section class="connexion-home">
+        <h1>Inscription</h1>
+
+        <hr>
+
+        <form action="index.php?route=addUser" method="POST">
+            <div class="mb-3">
+                <label for="exampleInputUser1" class="form-label">Nom d'utilisateur</label>
+                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" name="username">
+                <div id="userHelp" class="form-text">Nous ne partagerons jamais votre e-mail avec qui que ce soit d'autre.</div>
+            </div>
+
+           
+            <?php if (isset($_SESSION['statusUsername'])) : ?>
+
+                    <p class="alert alert-danger">
+
+                        <?= $_SESSION['statusUsername'] ?>
+                    </p>
+
+                <?php unset($_SESSION['statusUsername']) ?>
+
+            <?php endif; ?>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mot de passe</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+            </div>
+
+            <?php if (isset($_SESSION['statusPassword'])) : ?>
+
+                    <p class="alert alert-danger">
+
+                        <?= $_SESSION['statusPassword'] ?>
+                    </p>
+
+                <?php unset($_SESSION['statusPassword']) ?>
+
+            <?php endif; ?>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Confirmez votre mot de passe</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password1">
+            </div>
+
+            <?php if (isset($_SESSION['error'])) : ?>
+
+                    <p class="alert alert-danger">
+
+                        <?= $_SESSION['error'] ?>
+                    </p>
+
+                <?php unset($_SESSION['error']) ?>
+
+            <?php endif; ?>
+            <button type="submit" class="btn btn-primary">M'incrire</button>
+
+            <hr>
+
+            <p class="connexion-p">J'ai déjà un compte. <a href="index.php?route=login">Me connecter !</a></p>
+        </form>
+
+    </section>
+
+</main>

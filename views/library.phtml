@@ -1,0 +1,19 @@
+<main>
+
+    <section class="container-games">
+
+        <?php foreach($loggedUserGames as $game) : ?>
+            <div class="card" >
+                <img class="card-img-top" src="<?= $game->getJacket() ?>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $game->getTitle() ?></h5>
+                    <p class="card-text">Date de sortie: <?= $game->getReleaseYear() ?> </p>
+                    <p class="card-text"><?= $game->getId() ?></p>
+                </div>
+            </div>
+        <?php endforeach;  ?>
+
+    </section>
+    
+
+</main>

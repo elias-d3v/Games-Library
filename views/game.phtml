@@ -1,0 +1,20 @@
+<main>
+
+    <section class="container-games">
+
+        <?php foreach($games as $game) : ?>
+            <div class="card" >
+                <img class="card-img-top" src="<?= $game->getJacket() ?>" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title"><?= $game->getTitle() ?></h5>
+                    <p class="card-text">Date de sortie: <?= $game->getReleaseYear() ?> </p>
+                    <p class="card-text"><?= $game->getDescription() ?></p>
+                    <a href="index.php?route=addGame&gameid=<?= $game->getId() ?>" class="btn btn-primary">Ajouter ce jeu à ma librairie</a>
+                </div>
+            </div>
+        <?php endforeach;  ?>
+
+    </section>
+    
+
+</main>
